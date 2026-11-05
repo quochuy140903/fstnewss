@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Reels AI Batch Studio — Chrome VPN Bridge",
+  "version": "1.0.0",
+  "description": "Tự động cào đúng 100% video & caption Facebook Reels qua VPN Mỹ (Surfshark) trên Chrome cho Reels AI Batch Studio.",
+  "permissions": ["cookies"],
+  "host_permissions": [
+    "https://*.facebook.com/*",
+    "http://localhost:8050/*",
+    "http://127.0.0.1:8050/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost:8050/*", "http://127.0.0.1:8050/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
+
